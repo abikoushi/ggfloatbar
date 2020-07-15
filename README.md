@@ -7,3 +7,10 @@ Install the latest version of this package from Github by pasting in the followi
 ~~~R
 devtools::install_github("abikoushi/ggfloatbar")
 ~~~
+
+## Help
+
+~~~R
+library(ggfloatbar)
+?geom_float
+~~~
