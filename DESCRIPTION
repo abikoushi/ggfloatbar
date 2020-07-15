@@ -1,0 +1,11 @@
+Package: ggfloatbar
+Type: Package
+Title: geom_float
+Version: 0.1.0
+Author: Ko ABE
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Floating bar chat
+Imports: ggplot2 (>= 3.3.0), grid
+License: MIT License
+Encoding: UTF-8
+LazyData: true
