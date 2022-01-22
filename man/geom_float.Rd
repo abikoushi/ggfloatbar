@@ -4,7 +4,7 @@
 \alias{stat_diff}
 \title{Floating bar charts}
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+In geom_float,
 }
 \usage{
 geom_float(mapping = NULL, data = NULL, stat = "identity", position =   "identity", ..., na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
@@ -39,7 +39,6 @@ If FALSE, overrides the default aesthetics, rather than combining with them. Thi
 }
 }
 \section{Aesthetics}{
-
 \code{geom_float()} understands the following aesthetics (required aesthetics are in bold):
 \itemize{
 \item \strong{\code{x}}
