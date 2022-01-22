@@ -14,10 +14,10 @@ geom_floatbar(mapping = NULL, data = NULL, stat="diff", position = "identity", .
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mapping}{
-%%     ~~Describe \code{mapping} here~~
+Set of aesthetic mappings created by aes() or aes_(). If specified and inherit.aes = TRUE (the default), it is combined with the default mapping at the top level of the plot. You must supply mapping if there is no plot mapping.
 }
   \item{data}{
-%%     ~~Describe \code{data} here~~
+The data to be displayed in this layer.
 }
   \item{stat}{
 %%     ~~Describe \code{stat} here~~
@@ -26,30 +26,32 @@ geom_floatbar(mapping = NULL, data = NULL, stat="diff", position = "identity", .
 %%     ~~Describe \code{position} here~~
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other arguments passed on to layer(). These are often aesthetics, used to set an aesthetic to a fixed value, like colour = "red" or size = 3. They may also be parameters to the paired geom/stat.
 }
   \item{na.rm}{
-%%     ~~Describe \code{na.rm} here~~
+If FALSE, the default, missing values are removed with a warning. If TRUE, missing values are silently removed.
 }
   \item{show.legend}{
-%%     ~~Describe \code{show.legend} here~~
+logical. Should this layer be included in the legends? NA, the default, includes if any aesthetics are mapped. FALSE never includes, and TRUE always includes. It can also be a named logical vector to finely select the aesthetics to display.
 }
   \item{inherit.aes}{
-%%     ~~Describe \code{inherit.aes} here~~
+If FALSE, overrides the default aesthetics, rather than combining with them. This is most useful for helper functions that define both data and aesthetics and shouldn't inherit behaviour from the default plot specification, e.g. borders().
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+\section{Aesthetics}{
+
+\code{geom_float()} understands the following aesthetics (required aesthetics are in bold):
+\itemize{
+\item \strong{\code{x}}
+\item \strong{\code{y}}
+\item \code{alpha}
+\item \code{colour}
+\item \code{fill}
+\item \code{group}
+\item \code{linetype}
+\item \code{stroke}
 }
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+Learn more about setting these aesthetics in \code{vignette("ggplot2-specs")}.
 }
 \author{
 Ko ABE
@@ -65,8 +67,6 @@ Ko ABE
 }
 \examples{
 
-library(ggplot2)
-
 ggplot(sleep,aes(x=ID,y=extra,colour=group))+
   geom_float()
 
@@ -77,5 +77,5 @@ ggplot(sleep,aes(x=ID,y=extra))+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+%\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

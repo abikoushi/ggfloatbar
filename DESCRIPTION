@@ -1,11 +1,12 @@
 Package: ggfloatbar
 Type: Package
-Title: geom_float
+Title: floating barchart
 Version: 0.1.0
 Author: Ko ABE
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: Floating bar chat
+Maintainer: ko ABE <yourself@somewhere.net>
+Description: create floating bar chat based on 'ggplot2'.
+Depends: ggplot2
 Imports: ggplot2 (>= 3.3.0), grid
-License: MIT License
+License: License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
