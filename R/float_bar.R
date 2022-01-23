@@ -2,7 +2,7 @@
 "%||%" <- ggplot2:::"%||%"
 stack_var <- ggplot2:::stack_var
 collide <- ggplot2:::collide
-####utilities
+####
 
 StatDiff <- ggplot2::ggproto("StatDiff", ggplot2::Stat,
 
@@ -51,8 +51,6 @@ geom_floatbar <- function(mapping = NULL, data = NULL,
                           stat="diff",
                           position = "identity",
                           ...,
-                          alpha=0.5,
-                          width = NULL,
                           na.rm = FALSE,
                           show.legend = NA,
                           inherit.aes = TRUE) {
@@ -66,13 +64,12 @@ geom_floatbar <- function(mapping = NULL, data = NULL,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
     params = list(
-      alpha = alpha,
-      width = width,
       na.rm = na.rm,
       ...
     )
   )
 }
+
 GeomFloatbar <- ggplot2::ggproto("GeomFloatbar", ggplot2::GeomRect,
                    required_aes = c("x", "y"),
 
@@ -155,17 +152,3 @@ GeomFloat <- ggplot2::ggproto("GeomFloat", ggplot2::Geom,
                           )))
                         }
 )
-
-theme_bw2 <- function (base_size = 11, base_family = "", base_line_size = base_size/22,
-                       base_rect_size = base_size/22) {
-  ggplot2::theme_grey(base_size = base_size, base_family = base_family,
-             base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace%
-    ggplot2::theme(axis.text.x = element_text(colour="black",angle=90,hjust = 1),
-          axis.text.y = element_text(colour="black"),
-          panel.background = element_rect(fill = "white",colour = NA),
-          panel.border = element_rect(fill = NA,colour = "grey20"),
-          panel.grid = element_line(colour = "grey92"),
-          panel.grid.minor = element_line(size = rel(0.5)),
-          strip.background = element_rect(fill = "grey85",colour = "grey20"),
-          legend.key = element_rect(fill = "white", colour = NA), complete = TRUE)
-}

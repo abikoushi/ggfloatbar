@@ -6,7 +6,7 @@ Author: Ko ABE
 Maintainer: ko ABE <yourself@somewhere.net>
 Description: create floating bar chat based on 'ggplot2'.
 Depends: ggplot2
-Imports: ggplot2 (>= 3.3.0), grid
-License: License: MIT + file LICENSE
+Imports: ggplot2 (>= 3.3.0), grid, scales
+License: MIT
 Encoding: UTF-8
 LazyData: true
