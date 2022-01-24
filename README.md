@@ -13,4 +13,5 @@ devtools::install_github("abikoushi/ggfloatbar")
 ~~~R
 library(ggfloatbar)
 ?geom_float
+?stat_diff
 ~~~
