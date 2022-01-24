@@ -21,7 +21,6 @@ StatDiff <- ggplot2::ggproto("StatDiff", ggplot2::Stat,
 stat_diff <- function(mapping = NULL, data = NULL,
                        geom = "floatbar", position = "identity",
                        ...,
-                       width = NULL,
                        na.rm = FALSE,
                        orientation = NA,
                        show.legend = NA,
@@ -30,7 +29,6 @@ stat_diff <- function(mapping = NULL, data = NULL,
   params <- list(
     na.rm = na.rm,
     orientation = orientation,
-    width = width,
     ...
   )
 

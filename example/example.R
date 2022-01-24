@@ -29,6 +29,10 @@ theme_miniblack <- function (base_size = 11, base_family = "", base_line_size = 
                    complete = TRUE)
 }
 
-ggplot(sleep, aes(x=ID, y=extra, colour=group))+
-  geom_floatbar(alpha = 0.8) +
+ggplot(sleep, aes(x=ID, y=extra, colour=group, fill=group))+
+  geom_floatbar() +
   geom_float()
+
+ggplot(Orange, aes(x=age, y=circumference, fill=Tree, colour=Tree))+
+  stat_diff(alpha=0.5, width=50) +
+  geom_line()+geom_point()

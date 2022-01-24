@@ -1,8 +1,6 @@
 \name{geom_float}
 \alias{geom_float}
 \alias{geom_floatbar}
-\alias{stat_diff}
-\alias{StatDiff}
 \alias{GeomFloat}
 \alias{GeomFloatbar}
 \title{Floating bar charts}
@@ -17,14 +15,18 @@ geom_float(mapping = NULL,
   stat = "identity",
   position =   "identity",
   ...,
-  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE)
 
 geom_floatbar(mapping = NULL,
   data = NULL,
   stat = "diff",
   position = "identity",
   ...,
-  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -89,7 +91,6 @@ ggplot(sleep, aes(x=ID, y=extra, colour=group))+
 ggplot(sleep, aes(x=ID, y=extra, colour=group))+
      geom_floatbar()+
      geom_float()
-
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
