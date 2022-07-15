@@ -27,11 +27,8 @@ PositionDiff <- ggplot2::ggproto("PositionDiff", ggplot2::Position,
                                  }
 )
 
-position_diff <- function(width = NULL, preserve = "total") {
-  ggproto(NULL, PositionDiff,
-          width = width,
-          preserve = arg_match0(preserve, c("total", "single"))
-  )
+position_diff <- function() {
+  ggproto(NULL, PositionDiff)
 }
 
 
