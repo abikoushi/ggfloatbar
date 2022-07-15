@@ -8,10 +8,20 @@ Install the latest version of this package from Github by pasting in the followi
 devtools::install_github("abikoushi/ggfloatbar")
 ~~~
 
-## Help
+## Usage
 
 ~~~R
 library(ggfloatbar)
-?geom_float
-?stat_diff
+ggplot(sleep, aes(x=ID, y=extra, colour=group))+
+  geom_float()
 ~~~
+
+![Example 1](image/sleep1.png)
+
+~~~R
+ggplot(sleep, aes(x=ID, y=extra, colour=group))+
+  geom_floatbar()+
+  geom_float()
+~~~
+
+![Example 2](image/sleep2.png)

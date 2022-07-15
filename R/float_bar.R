@@ -4,50 +4,40 @@ stack_var <- ggplot2:::stack_var
 collide <- ggplot2:::collide
 ####
 
-StatDiff <- ggplot2::ggproto("StatDiff", ggplot2::Stat,
+PositionDiff <- ggplot2::ggproto("PositionDiff", ggplot2::Position,
+                                 setup_params = function(self, data) {
+                                   flipped_aes <- ggplot2::has_flipped_aes(data)
+                                   data <- flip_data(data, flipped_aes)
 
-                   required_aes = c("x", "y"),
+                                   list(flipped_aes = flipped_aes)
+                                 },
 
-                   compute_panel = function(data, scales) {
-                     d2 <- split(data,data$x)
-                     dmax <- do.call("rbind",lapply(d2, function(d)d[order(d$y),][-1,]) )
-                     dmin <- do.call("rbind",lapply(d2, function(d)d[order(d$y),][-nrow(d),]) )
-                     dmax$ymin <- dmin$y
-                     dmax$ymax <- dmax$y
-                     dmax
-                   }
+                                 setup_data = function(self, data, params) {
+                                   data <- flip_data(data, params$flipped_aes)
+                                   flip_data(data, params$flipped_aes)
+                                 },
+
+                                 compute_panel = function(data, params, scales) {
+                                   d2 <- split(data,data$x)
+                                   dmax <- do.call("rbind",lapply(d2, function(d)d[order(d$y),][-1,]) )
+                                   dmin <- do.call("rbind",lapply(d2, function(d)d[order(d$y),][-nrow(d),]) )
+                                   dmax$ymin <- dmin$y
+                                   dmax$ymax <- dmax$y
+                                   dmax
+                                 }
 )
 
-stat_diff <- function(mapping = NULL, data = NULL,
-                       geom = "floatbar", position = "identity",
-                       ...,
-                       na.rm = FALSE,
-                       orientation = NA,
-                       show.legend = NA,
-                       inherit.aes = TRUE) {
-
-  params <- list(
-    na.rm = na.rm,
-    orientation = orientation,
-    ...
-  )
-
-  ggplot2::layer(
-    data = data,
-    mapping = mapping,
-    stat = StatDiff,
-    geom = geom,
-    position = position,
-    show.legend = show.legend,
-    inherit.aes = inherit.aes,
-    params = params
+position_diff <- function(width = NULL, preserve = "total") {
+  ggproto(NULL, PositionDiff,
+          width = width,
+          preserve = arg_match0(preserve, c("total", "single"))
   )
 }
 
 
 geom_floatbar <- function(mapping = NULL, data = NULL,
-                          stat="diff",
-                          position = "identity",
+                          stat="identity",
+                          position = "diff",
                           ...,
                           na.rm = FALSE,
                           show.legend = NA,

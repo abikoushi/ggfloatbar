@@ -1,6 +1,5 @@
 export(geom_float, GeomFloat)
 export(geom_floatbar, GeomFloatbar)
-export(stat_diff, StatDiff)
 import(ggplot2)
 importFrom(scales,alpha)
 importFrom(grid,unit)
