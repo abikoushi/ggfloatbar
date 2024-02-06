@@ -118,7 +118,7 @@ GeomFloat <- ggplot2::ggproto("GeomFloat", ggplot2::Geom,
                           ggplot2::GeomErrorbar$setup_data(data, params)
                         },
 
-                        default_aes = ggplot2::aes(colour = "black", fill = NA, size = 1, linetype = 1,
+                        default_aes = ggplot2::aes(colour = "black", fill = NA, linewidth = 1, linetype = 1,
                                           alpha = NA),
 
                         required_aes = c("x", "y"),
@@ -128,7 +128,7 @@ GeomFloat <- ggplot2::ggproto("GeomFloat", ggplot2::Geom,
                         draw_panel = function(data, panel_params, coord, width = NULL, flipped_aes = FALSE) {
                           data <- ggplot2::flip_data(data, flipped_aes)
 
-                          middle <- transform(data, x = xmin, xend = xmax, yend = y, size = size , alpha = alpha)
+                          middle <- transform(data, x = xmin, xend = xmax, yend = y, linewidth = linewidth , alpha = alpha)
 
                           middle <- ggplot2::flip_data(middle, flipped_aes)
 
